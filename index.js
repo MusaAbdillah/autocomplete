@@ -60,7 +60,7 @@ mongodb.MongoClient.connect(url, function(err, db) {
 	})
 
 	app.get("/", function(req, res, next) {
-		var url = "http://localhost:3000/rooms"
+		var url = "mongodb://heroku_qvb1q40q:pj1qaamqtr1v640aeb80lnkos2@ds245762.mlab.com:45762/heroku_qvb1q40q"
 		req.rooms
 			.find({}, {sort: {_id: -1}})
 			.toArray(function(err, rooms){
