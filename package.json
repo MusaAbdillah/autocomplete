@@ -21,6 +21,10 @@
 			"react"
 		]
 	},
+	"engines": {
+		"npm": "6.4.1",
+		"node": "10.15.3"
+	},
 	"dependencies": {
 		"babel-register": "6.11.6",
 		"body-parser": "1.13.2",
