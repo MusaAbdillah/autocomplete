@@ -26,6 +26,7 @@
 		"npm": "6.4.1",
 		"node": "10.15.3"
 	},
+	"proxy": "https://glacial-scrubland-83947.herokuapp.com/",
 	"dependencies": {
 		"babel-register": "6.11.6",
 		"body-parser": "1.13.2",
