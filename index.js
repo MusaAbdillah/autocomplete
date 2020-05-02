@@ -17,7 +17,7 @@ require("babel-register")({
 })
 
 const Autocomplete = React.createFactory(require("./src/autocomplete.jsx"))
-	port = 3000
+const port = process.env.PORT || 8080
 
 mongodb.MongoClient.connect(url, function(err, db) {
 	if (err) {
