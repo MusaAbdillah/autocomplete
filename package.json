@@ -35,7 +35,7 @@
 		"express-handlebars": "2.0.1",
 		"express-validator": "2.13.0",
 		"mongodb": "2.0.36",
-		"morgan": "1.6.1"
+		"morgan": "1.9.1"
 	},
 	"devDependencies": {
 		"axios": "0.13.1",
