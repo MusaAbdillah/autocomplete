@@ -10,7 +10,9 @@ const 	express = require("express"),
 		url = "mongodb://heroku_qvb1q40q:pj1qaamqtr1v640aeb80lnkos2@ds245762.mlab.com:45762/heroku_qvb1q40q",
 		ReactDOM = require("react-dom"),
 		ReactDOMServer = require("react-dom/server"),
-		React = require("react")
+		React = require("react"),
+		cors = require('cors')
+
 
 require("babel-register")({
 	presets: ["react"]
@@ -18,6 +20,19 @@ require("babel-register")({
 
 const Autocomplete = React.createFactory(require("./src/autocomplete.jsx"))
 const port = process.env.PORT || 8080
+// const whitelist = ['mongodb://heroku_qvb1q40q:pj1qaamqtr1v640aeb80lnkos2@ds245762.mlab.com:45762/heroku_qvb1q40q', "http://localhost:8080/"]
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//   	console.log("whitelist goes here======================")
+//   	console.log(whitelist)
+//   	console.log("whitelist goes here======================")
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   }
+// }
 
 mongodb.MongoClient.connect(url, function(err, db) {
 	if (err) {
@@ -25,6 +40,7 @@ mongodb.MongoClient.connect(url, function(err, db) {
 		process.exit(1)
 	}
 
+	app.use(cors())
 	app.use(compression())
 	app.use(logger("div"))
 	app.use(errorHandler())
