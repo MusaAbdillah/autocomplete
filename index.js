@@ -36,6 +36,8 @@ mongodb.MongoClient.connect(url, function(err, db) {
 	app.set("view engine", "handlebars")
 
 	app.use(function(req, res, next) {
+		res.header("Access-Control-Allow-Origin", "*")
+		res.header("Access-Control-Allow-Headers", "X-Requested-With")
 		req.rooms = db.collection("rooms")
 		return next()
 	})
