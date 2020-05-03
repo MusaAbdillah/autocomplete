@@ -20,7 +20,7 @@ require("babel-register")({
 
 const Autocomplete = React.createFactory(require("./src/autocomplete.jsx"))
 const port = process.env.PORT || 8080
-const whitelist = ["mongodb://heroku_qvb1q40q:pj1qaamqtr1v640aeb80lnkos2@ds245762.mlab.com:45762/heroku_qvb1q40q"]
+const whitelist = ["https://glacial-scrubland-83947.herokuapp.com/", "mongodb://heroku_qvb1q40q:pj1qaamqtr1v640aeb80lnkos2@ds245762.mlab.com:45762/heroku_qvb1q40q"]
 const corsOptions = {
   origin: function (origin, callback) {
   	console.log("whitelist goes here======================")
