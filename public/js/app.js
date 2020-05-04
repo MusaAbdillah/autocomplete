@@ -22759,7 +22759,7 @@
 	
 		componentDidMount() {
 			if (this.props.url == "test") return true;
-			request({ url: this.props.url }).then(response => response.data).then(body => {
+			request({ url: this.props.url + "/rooms" }).then(response => response.data).then(body => {
 				if (!body) {
 					console.error("Failed to load");
 				}
@@ -22781,7 +22781,7 @@
 	
 		addOption(event) {
 			let currentOption = this.state.currentOption;
-			request.post(this.props.url, { name: currentOption }).then(response => response.data).then(body => {
+			request.post(this.props.url + "/rooms", { name: currentOption }).then(response => response.data).then(body => {
 				if (!body) {
 					return console.error("Failed to save");
 				}

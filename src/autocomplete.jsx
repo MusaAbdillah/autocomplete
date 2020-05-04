@@ -17,7 +17,7 @@ class Autocomplete extends React.Component {
 
 	componentDidMount(){
 		if (this.props.url == "test") return true
-		request({url: this.props.url})
+		request({url: this.props.url + "/rooms"})
 			.then(response => response.data)
 			.then(body => {
 				if (!body) {
@@ -42,7 +42,7 @@ class Autocomplete extends React.Component {
 
 	addOption(event){
 		let currentOption = this.state.currentOption
-		request.post(this.props.url, {name: currentOption})
+		request.post(this.props.url + "/rooms", {name: currentOption})
 			.then(response => response.data)
 			.then((body) => {
 				if (!body) {
