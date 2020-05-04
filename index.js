@@ -82,7 +82,7 @@ mongodb.MongoClient.connect(url, function(err, db) {
 	})
 
 	app.get("/", cors(corsOptions), function(req, res, next) {
-		var url = "mongodb://heroku_qvb1q40q:pj1qaamqtr1v640aeb80lnkos2@ds245762.mlab.com:45762/heroku_qvb1q40q"
+		var url = process.env.BASE_URL || `http://localhost:${port}`
 		req.rooms
 			.find({}, {sort: {_id: -1}})
 			.toArray(function(err, rooms){
