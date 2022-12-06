@@ -36,7 +36,7 @@
 		"compression": "1.5.1",
 		"cors": "^2.8.5",
 		"errorhandler": "1.4.1",
-		"express": "4.13.1",
+		"express": "4.17.3",
 		"express-handlebars": "2.0.1",
 		"express-validator": "2.13.0",
 		"jest-cli": "13.2.3",
